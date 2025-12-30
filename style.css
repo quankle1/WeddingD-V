@@ -263,3 +263,79 @@ body {
         transform: translate(-50%, -50%) !important;
     }
 }
+
+/* Music Control Button */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out;
+}
+
+.music-control.hidden {
+    display: none;
+}
+
+.music-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #d4af37;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    color: #5a4a3a;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.music-btn:active {
+    transform: translateY(0);
+}
+
+.music-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.music-btn:hover .music-icon {
+    transform: scale(1.2);
+}
+
+.music-btn.playing .music-icon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
