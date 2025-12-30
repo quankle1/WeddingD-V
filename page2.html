@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Thiệp cưới Hái Đăng & Yến Vy">
+    <title>Wedding Day - Hái Đăng & Yến Vy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+    <!-- Hidden Audio Player (Auto-play) -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="musics/Nothing's Gonna Change My Love For You.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- Section 1: Hero with Wedding Day Text -->
+    <section class="hero-section">
+        <div class="hero-image-container">
+            <img src="imageReals/intro.jpg" alt="Wedding Photo" class="hero-image">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+                <h1 class="wedding-day-text">Wedding day</h1>
+                <div class="couple-names">
+                    <p class="groom-name">Hải Đăng</p>
+                    <p class="bride-name">Yến Vy</p>
+                    <p class="wedding-date">19.02.2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Save the Date -->
+    <section class="save-date-section">
+        <div class="save-date-content">
+            <h2 class="save-date-heading">SAVE <span class="script-the">the</span> DATE</h2>
+            <p class="wedding-date-text">19.02.2026</p>
+            <div class="couple-photo-container">
+                <img src="imageReals/GIA_2700.JPG" alt="Couple Photo" class="couple-main-photo">
+            </div>
+            <div class="couple-names-info">
+                <p class="couple-full-names">Hải Đăng & Yến Vy</p>
+                <div class="wedding-date-grid">
+                    <div class="date-column left-column">
+                        <p class="date-day">Thứ Năm</p>
+                        <p class="date-time">11:00</p>
+                    </div>
+                    <div class="date-column center-column">
+                        <p class="date-number">19</p>
+                    </div>
+                    <div class="date-column right-column">
+                        <p class="date-month">Tháng 02</p>
+                        <p class="date-year">2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Invitation -->
+    <section class="invitation-section">
+        <div class="invitation-content">
+            <div class="couple-photo-header">
+                <img src="imageReals/s1.jpg" alt="Happy Couple" class="couple-photo">
+                <div class="floral-top-decoration"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Wedding Details with Map -->
+    <section class="wedding-details-section">
+        <div class="details-content">
+            <div class="parents-info-repeat">
+                <div class="bride-parents">
+                    <h4 class="family-label-top">NHÀ GÁI</h4>
+                    <p class="father-info">Ông. Hồ Phát Đạt</p>
+                    <p>Bà. Nguyễn Thị Đài Tâm</p>
+                    <p>An Giang</p>
+                </div>
+                <div class="divider-line"></div>
+                <div class="groom-parents">
+                    <h4 class="family-label-top">NHÀ TRAI</h4>
+                    <p class="father-info">Ông. Phạm Văn Phi <br><span class="small-text">( Cố Phụ)</span></p>
+                    <p>Bà. Nguyễn Hồng Phượng</p>
+                    <p>An Giang</p>
+                </div>
+            </div>
+            <p class="invitation-message-repeat">Thân mời bạn đến tham dự đám cưới<br>cùng gia đình chúng tôi!</p>
+
+            <div class="couple-names-display">
+                <h2 class="groom-display">HẢI ĐĂNG</h2>
+                <img src="images/templates/and.png" alt="and" class="and-symbol-img">
+                <h2 class="bride-display">YẾN VY</h2>
+            </div>
+
+            <div class="ceremony-details">
+                <p class="ceremony-title">HÔN LỄ ĐƯỢC CỬ HÀNH TẠI TƯ GIA</p>
+                <p class="ceremony-time">VÀO LÚC 11:30, THỨ NĂM</p>
+
+                <div class="date-display-full">
+                    <div class="date-parts">
+                        <div class="date-group-left">
+                            <span class="date-label">THÁNG</span>
+                            <span class="date-number-medium">02</span>
+                        </div>
+                        <span class="date-number-huge">19</span>
+                        <div class="date-group-right">
+                            <span class="date-label">NĂM</span>
+                            <span class="date-number-medium">2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="lunar-date">(Nhằm mồng 3 Tết tháng Giêng năm Bính Ngọ)</p>
+
+                <p class="venue-full-address">Địa chỉ: 192 TỔ 5 ẤP HẬU GIANG 1, XÃ PHÚ TÂN, Tỉnh An Giang</p>
+            </div>
+
+            <button class="directions-btn" id="directionsBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                        fill="currentColor" />
+                </svg>
+                CHỈ ĐƯỜNG
+            </button>
+        </div>
+    </section>
+
+    <!-- Section 5: Couple Information -->
+    <section class="couple-info-section">
+        <div class="couple-info-container">
+
+            <div class="bride-info">
+                <div class="couple-header">
+                    <span class="script-text">Cô dâu</span>
+                </div>
+                <h3 class="couple-info-name">YẾN VY</h3>
+                <div class="polaroid">
+                    <img src="imageReals/coDau.jpg" alt="Bride" class="couple-photo-card">
+                    <div class="polaroid-decoration"></div>
+                </div>
+            </div>
+
+            <div class="divider-heart">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="#c9a86a">
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </div>
+
+
+            <div class="groom-info">
+                <div class="polaroid">
+                    <img src="imageReals/chuRe.jpg" alt="Groom" class="couple-photo-card">
+                    <div class="polaroid-decoration"></div>
+                </div>
+                <h3 class="couple-info-name">HẢI ĐĂNG</h3>
+                <div class="couple-header">
+                    <span class="script-text">Chú rể</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Single Romantic Photo -->
+    <section class="single-photo-section">
+        <div class="single-photo-wrapper">
+            <img src="imageReals/s2.jpg" alt="Romantic Couple" class="single-romantic-photo">
+            <div class="photo-overlay-gradient"></div>
+        </div>
+    </section>
+
+
+
+    <!-- Section 8: Album -->
+    <section class="album-section">
+        <div class="album-content">
+            <div class="album-header">
+                <h2 class="album-title">ALBUM <span class="script-of">of</span></h2>
+                <div class="album-love-text">LOVE</div>
+            </div>
+
+            <!-- Photo Carousel -->
+            <div class="album-carousel">
+                <div class="carousel-main-display">
+                    <button class="carousel-nav carousel-prev" id="prevBtn">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="carousel-image-container">
+                        <img src="imageReals/album1.jpg" alt="Wedding Photo" class="carousel-main-image" id="mainImage">
+                    </div>
+                    <button class="carousel-nav carousel-next" id="nextBtn">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="carousel-thumbnails-wrapper">
+                    <div class="carousel-thumbnails" id="thumbnailsContainer">
+                        <img src="imageReals/album1.jpg" alt="Photo 1" class="carousel-thumb active" data-index="0">
+                        <img src="imageReals/album2.jpg" alt="Photo 2" class="carousel-thumb" data-index="1">
+                        <img src="imageReals/album3.jpg" alt="Photo 3" class="carousel-thumb" data-index="2">
+                        <img src="imageReals/album4.jpg" alt="Photo 4" class="carousel-thumb" data-index="3">
+                        <img src="imageReals/album5.jpg" alt="Photo 5" class="carousel-thumb" data-index="4">
+                        <img src="imageReals/album6.jpg" alt="Photo 6" class="carousel-thumb" data-index="5">
+                        <img src="imageReals/album7.jpg" alt="Photo 7" class="carousel-thumb" data-index="6">
+                        <img src="imageReals/album8.jpg" alt="Photo 8" class="carousel-thumb" data-index="7">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 9: RSVP Form -->
+    <section class="rsvp-section">
+        <div class="rsvp-content">
+            <p class="rsvp-intro">
+                Hãy xác nhận sự có mặt của bạn trước để chúng mình chuẩn bị đón tiếp một cách chu đáo nhất.<br>
+                Trân trọng!
+            </p>
+
+            <form id="rsvpForm" class="rsvp-form">
+                <input type="text" id="guestName" name="guestName" placeholder="Họ và tên" required class="form-input">
+
+                <textarea id="guestMessage" name="guestMessage" placeholder="Lời nhắn" rows="4"
+                    class="form-textarea"></textarea>
+
+                <select id="attendance" name="attendance" required class="form-select">
+                    <option value="">Bạn sẽ đến chứ?</option>
+                    <option value="Mình chắc chắn sẽ đến">Mình chắc chắn sẽ đến</option>
+                    <option value="Xin lỗi mình bận rồi">Xin lỗi mình bận rồi</option>
+                </select>
+
+                <select id="guestCount" name="guestCount" required class="form-select">
+                    <option value="">Bạn tham dự cùng ai?</option>
+                    <option value="1 người">1 người</option>
+                    <option value="2 người">2 người</option>
+                    <option value="3 người">3 người</option>
+                    <option value="4 người">4 người</option>
+                </select>
+
+                <button type="submit" class="form-submit-btn">GỬI LỜI NHẮN & <br>XÁC NHẬN</button>
+            </form>
+
+            <div id="formMessage" class="form-message"></div>
+        </div>
+    </section>
+
+    <!-- Section 10: Closing Message -->
+    <section class="message-section">
+        <div class="message-content">
+            <div class="message-image-wrapper">
+                <img src="imageReals/GIA_3057.JPG" alt="Couple Message" class="message-image">
+                <div class="message-overlay"></div>
+                <div class="message-text-overlay">
+                    <p class="message-paragraph-overlay">
+                        Tình yêu của anh và em là một hành trình kỳ diệu, vượt qua bao thử thách để được nhạo bước đến
+                        ngày
+                        trọng đại - đám cưới của chúng ta. Đó không chỉ là khoảnh khắc long trọng, mà còn là minh chứng
+                        cho
+                        tình cảm bền chặt và sự lựa chọn của hai người dành cho nhau.
+                    </p>
+                    <p class="message-paragraph-overlay">
+                        Đám cưới này là lời cam kết chân thành, là sự bắt đầu của một chương mới - nơi chúng ta cùng vun
+                        đắp
+                        tổ ấm, cùng sẻ chia mỗi bước và cùng đếm từng phút để cuối con đường mang tên hạnh phúc.
+                    </p>
+                    <p class="message-signature-overlay">
+                        <span class="script-signature">The Love Story</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11: Countdown Timer -->
+    <section class="countdown-timer-section">
+        <div class="countdown-timer-content">
+            <div class="countdown-decoration-flower">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="15" fill="#f0e6d2" opacity="0.6" />
+                    <circle cx="35" cy="40" r="10" fill="#e8dcc8" opacity="0.5" />
+                    <circle cx="65" cy="40" r="10" fill="#e8dcc8" opacity="0.5" />
+                    <circle cx="50" cy="60" r="12" fill="#d4c5a0" opacity="0.6" />
+                </svg>
+            </div>
+            <h2 class="countdown-main-heading">Countdown</h2>
+            <div class="countdown-timer-display">
+                <div class="countdown-number-item">
+                    <div class="countdown-number" id="days">00</div>
+                </div>
+                <div class="countdown-colon">:</div>
+                <div class="countdown-number-item">
+                    <div class="countdown-number" id="hours">00</div>
+                </div>
+                <div class="countdown-colon">:</div>
+                <div class="countdown-number-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                </div>
+                <div class="countdown-colon">:</div>
+                <div class="countdown-number-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 12: Thank You with Background Image -->
+    <section class="thankyou-section">
+        <div class="thankyou-background-wrapper">
+            <img src="imageReals/thankyou.jpg" alt="Thank You" class="thankyou-bg-image">
+            <div class="thankyou-overlay"></div>
+        </div>
+        <div class="thankyou-content">
+            <h2 class="thankyou-title">Thank you</h2>
+            <p class="thankyou-message">
+                Cảm ơn bạn đã dành tình cảm cho chúng mình! <br>
+                Sự hiện diện của bạn chính là món quà ý nghĩa nhất,
+                và chúng mình rất mong được cùng chia sẻ
+                niềm hạnh phúc trong ngày trọng đại này.
+            </p>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
+    <script src="page2.js"></script>
+</body>
+
+</html>
