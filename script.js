@@ -1,21 +1,46 @@
-// Auto-play background music
+// Music Player Controls - Manual play only
 document.addEventListener('DOMContentLoaded', function () {
-    const backgroundMusic = document.getElementById('backgroundMusic');
+    const music1 = document.getElementById('music1');
+    const music2 = document.getElementById('music2');
+    const musicBtn1 = document.getElementById('musicBtn1');
+    const musicBtn2 = document.getElementById('musicBtn2');
 
-    if (backgroundMusic) {
-        // Try to auto-play
-        backgroundMusic.play().catch(err => {
-            console.log('Auto-play blocked, will play on first user interaction:', err);
+    // Setup music button functionality
+    function setupMusicButton(btn, audio, otherAudio, otherBtn) {
+        if (!btn || !audio) return;
 
-            // If auto-play is blocked, play on first user interaction
-            const playOnInteraction = () => {
-                backgroundMusic.play().catch(e => console.log('Play failed:', e));
-            };
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent triggering other click events
 
-            document.addEventListener('click', playOnInteraction, { once: true });
-            document.addEventListener('touchstart', playOnInteraction, { once: true });
+            if (audio.paused) {
+                // Stop the other audio first
+                if (otherAudio && !otherAudio.paused) {
+                    otherAudio.pause();
+                    if (otherBtn) otherBtn.classList.remove('playing');
+                }
+
+                // Play this audio
+                audio.play().then(() => {
+                    btn.classList.add('playing');
+                }).catch(err => {
+                    console.log('Play failed:', err);
+                });
+            } else {
+                // Pause this audio
+                audio.pause();
+                btn.classList.remove('playing');
+            }
+        });
+
+        // Update button state when audio ends (if not looping)
+        audio.addEventListener('ended', function () {
+            btn.classList.remove('playing');
         });
     }
+
+    // Initialize both music buttons
+    setupMusicButton(musicBtn1, music1, music2, musicBtn2);
+    setupMusicButton(musicBtn2, music2, music1, musicBtn1);
 
     // Wax Seal Click Handler
     const waxSeal = document.getElementById('waxSeal');
@@ -25,12 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Prevent default behavior and stop propagation
         e.preventDefault();
         e.stopPropagation();
-
-        // Save music time before navigation
-        if (backgroundMusic && !backgroundMusic.paused) {
-            localStorage.setItem('musicTime', backgroundMusic.currentTime.toString());
-            localStorage.setItem('musicPlaying', 'true');
-        }
 
         // Add click animation
         waxSeal.style.transition = 'transform 0.3s ease, opacity 0.3s ease';

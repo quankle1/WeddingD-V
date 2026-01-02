@@ -1,35 +1,45 @@
 // Smooth scroll behavior
 document.addEventListener('DOMContentLoaded', function () {
-    // Auto-play background music
-    const backgroundMusic = document.getElementById('backgroundMusic');
+    // Music Player Controls - Manual play only
+    const music1 = document.getElementById('music1');
+    const music2 = document.getElementById('music2');
+    const musicBtn1 = document.getElementById('musicBtn1');
+    const musicBtn2 = document.getElementById('musicBtn2');
 
-    if (backgroundMusic) {
-        // Restore music position from previous page
-        const savedTime = localStorage.getItem('musicTime');
-        if (savedTime) {
-            backgroundMusic.currentTime = parseFloat(savedTime);
-            localStorage.removeItem('musicTime');
-            localStorage.removeItem('musicPlaying');
-        }
+    // Setup music button functionality
+    function setupMusicButton(btn, audio, otherAudio, otherBtn) {
+        if (!btn || !audio) return;
 
-        // Try to auto-play
-        backgroundMusic.play().catch(err => {
-            console.log('Auto-play blocked, will play on first user interaction:', err);
+        btn.addEventListener('click', function () {
+            if (audio.paused) {
+                // Stop the other audio first
+                if (otherAudio && !otherAudio.paused) {
+                    otherAudio.pause();
+                    if (otherBtn) otherBtn.classList.remove('playing');
+                }
 
-            // If auto-play is blocked, play on first user interaction
-            const playOnInteraction = () => {
-                backgroundMusic.play().catch(e => console.log('Play failed:', e));
-                // Remove listeners after first play
-                document.removeEventListener('click', playOnInteraction);
-                document.removeEventListener('touchstart', playOnInteraction);
-                document.removeEventListener('scroll', playOnInteraction);
-            };
+                // Play this audio
+                audio.play().then(() => {
+                    btn.classList.add('playing');
+                }).catch(err => {
+                    console.log('Play failed:', err);
+                });
+            } else {
+                // Pause this audio
+                audio.pause();
+                btn.classList.remove('playing');
+            }
+        });
 
-            document.addEventListener('click', playOnInteraction, { once: true });
-            document.addEventListener('touchstart', playOnInteraction, { once: true });
-            document.addEventListener('scroll', playOnInteraction, { once: true });
+        // Update button state when audio ends (if not looping)
+        audio.addEventListener('ended', function () {
+            btn.classList.remove('playing');
         });
     }
+
+    // Initialize both music buttons
+    setupMusicButton(musicBtn1, music1, music2, musicBtn2);
+    setupMusicButton(musicBtn2, music2, music1, musicBtn1);
 
 
     // Countdown Timer

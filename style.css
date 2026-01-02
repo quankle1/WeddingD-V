@@ -338,3 +338,219 @@ body {
         transform: scale(1.1);
     }
 }
+
+/* Music Controls - Bottom Left and Right */
+.music-controls-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.music-btn-left {
+    left: 20px;
+}
+
+.music-btn-right {
+    right: 20px;
+}
+
+/* Gold Button Style */
+.music-btn-gold {
+    background: linear-gradient(135deg, rgba(255, 248, 235, 0.95) 0%, rgba(255, 239, 210, 0.95) 100%);
+    border: 2px solid #c9a86a;
+    box-shadow: 0 4px 20px rgba(201, 168, 106, 0.3);
+}
+
+.music-btn-gold .music-icon {
+    color: #b8956a;
+}
+
+.music-btn-gold:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(201, 168, 106, 0.5);
+    width: auto;
+    border-radius: 30px;
+    padding: 0 20px;
+    gap: 10px;
+}
+
+.music-btn-gold.playing {
+    background: linear-gradient(135deg, #c9a86a 0%, #b8956a 100%);
+    animation: pulse-glow-gold 2s infinite;
+}
+
+.music-btn-gold.playing .music-icon {
+    color: white;
+    animation: bounce-note 0.6s ease infinite;
+}
+
+@keyframes pulse-glow-gold {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(201, 168, 106, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 35px rgba(201, 168, 106, 0.8);
+    }
+}
+
+/* Rose Button Style */
+.music-btn-rose {
+    background: linear-gradient(135deg, rgba(255, 240, 245, 0.95) 0%, rgba(255, 228, 235, 0.95) 100%);
+    border: 2px solid #e8a4b8;
+    box-shadow: 0 4px 20px rgba(232, 164, 184, 0.3);
+}
+
+.music-btn-rose .music-icon {
+    color: #d4839b;
+}
+
+.music-btn-rose:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(232, 164, 184, 0.5);
+    width: auto;
+    border-radius: 30px;
+    padding: 0 20px;
+    gap: 10px;
+}
+
+.music-btn-rose.playing {
+    background: linear-gradient(135deg, #e8a4b8 0%, #d4839b 100%);
+    animation: pulse-glow-rose 2s infinite;
+}
+
+.music-btn-rose.playing .music-icon {
+    color: white;
+    animation: bounce-note 0.6s ease infinite;
+}
+
+@keyframes pulse-glow-rose {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(232, 164, 184, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 35px rgba(232, 164, 184, 0.8);
+    }
+}
+
+/* Music Note Animation */
+@keyframes bounce-note {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-3px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateY(-3px) rotate(5deg);
+    }
+}
+
+.music-btn:hover .music-title {
+    display: block;
+    max-width: 200px;
+}
+
+.music-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.music-title {
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #5a4a3a;
+    white-space: nowrap;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.3s ease;
+}
+
+.music-btn.playing .music-title {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .music-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+    }
+
+    .music-btn-left {
+        left: 15px;
+    }
+
+    .music-btn-right {
+        right: 15px;
+    }
+
+    .music-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .music-btn:hover {
+        width: 50px;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .music-btn:hover .music-title {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 10px;
+    }
+
+    .music-btn-left {
+        left: 10px;
+    }
+
+    .music-btn-right {
+        right: 10px;
+    }
+
+    .music-icon {
+        width: 22px;
+        height: 22px;
+    }
+}

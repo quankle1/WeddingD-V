@@ -36,10 +36,30 @@
         </div>
     </div>
 
-    <!-- Hidden Audio Player (Auto-play) -->
-    <audio id="backgroundMusic" loop autoplay>
+    <!-- Audio Players (Manual play only) -->
+    <audio id="music1" loop>
         <source src="musics/Nothing's Gonna Change My Love For You.mp3" type="audio/mpeg">
     </audio>
+    <audio id="music2" loop>
+        <source src="musics/Ngay-Chung-Doi-Van-Mai-Huong.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Control Buttons -->
+    <div class="music-controls-container">
+        <button class="music-btn music-btn-left music-btn-gold" id="musicBtn1" data-audio="music1">
+            <svg class="music-icon music-note-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+            </svg>
+            <span class="music-title">Nothing's Gonna Change My Love</span>
+        </button>
+        <button class="music-btn music-btn-right music-btn-rose" id="musicBtn2" data-audio="music2">
+            <svg class="music-icon music-note-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M21 3v12.5c0 1.38-1.12 2.5-2.5 2.5S16 16.88 16 15.5s1.12-2.5 2.5-2.5c.57 0 1.08.19 1.5.51V5h-8v10.5c0 1.38-1.12 2.5-2.5 2.5S7 16.88 7 15.5 8.12 13 9.5 13c.57 0 1.08.19 1.5.51V3h10z" />
+            </svg>
+            <span class="music-title">Ngày Chung Đôi</span>
+        </button>
+    </div>
 
     <script src="script.js"></script>
 </body>
