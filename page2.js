@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Countdown Timer
-    const weddingDate = new Date('2026-02-19T18:30:00').getTime();
+    const weddingDate = new Date('2026-02-19T10:30:00').getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
