@@ -1943,6 +1943,7 @@ body {
     background: linear-gradient(135deg, #c9a86a 0%, #b8956a 100%);
     color: white;
     box-shadow: 0 8px 25px rgba(184, 149, 106, 0.3);
+    font-family: 'Times New Roman', serif;
 }
 
 .form-submit-btn:hover {
